@@ -1,0 +1,36 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables file
+.env
+
+# Flask instance folder (if used)
+instance/
+
+# Local database files
+*.sqlite3
+*.db
+
+# Log files
+*.log
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+
+# VS Code / PyCharm project settings
+.vscode/
+.idea/
+
+# Python egg / build artifacts
+*.egg-info/
+dist/
+build/
+
