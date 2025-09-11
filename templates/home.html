@@ -55,16 +55,23 @@
         /* ANCHO AL 100% */
     }
 </style>
+
 <!--JUMBOTRON-->
 <div class="container mt-5">
-    <div class="bg-light p-5 rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">IngresosApp</h1>
-            <p class="col-md-8 fs-4">Solución práctica para la toma de datos. Ingresos a barrios cerrados, zonas
-                industriales u otros controles privados.</p>
-            <button class="btn btn-primary btn-lg" type="button">Descargar</button>
-        </div>
+  <div class="bg-light p-5 rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">IngresosApp</h1>
+      <p class="col-md-8 fs-4">
+        Solución práctica para la toma de datos. Ingresos a barrios cerrados, zonas
+        industriales u otros controles privados.
+      </p>
+      <a href="https://github.com/Lucas68747/IngresosApp"
+         class="btn btn-primary btn-lg"
+         target="_blank" rel="noopener">
+        Descargar
+      </a>
     </div>
+  </div>
 </div>
 
 <!-- Bloque Features -->
@@ -111,13 +118,18 @@
 
 <!-- Changelog Section -->
 <section class="changelog">
-    <h2>Historial de versiones</h2>
-    <div class="version-entry">
-        <h3>v1.0</h3>
-        <p>• Primera versión terminada. App base con función de exportar reportes en PDF.</p>
-        <a href="{{ url_for('static', filename='downloads/IngresosApp_v1.2.exe') }}" download>Descargar v1.0</a>
-    </div>
+  <h2>Historial de versiones</h2>
+  <div class="version-entry">
+    <h3>v1.0</h3>
+    <p>• Primera versión terminada. App base con función de exportar reportes en PDF.</p>
+    <a href="https://github.com/Lucas68747/IngresosApp/releases/tag/v1.0"
+       class="btn btn-outline-primary"
+       target="_blank" rel="noopener">
+      Descargar v1.0
+    </a>
+  </div>
 </section>
+
 
 <!-- Footer section -->
 <footer>
