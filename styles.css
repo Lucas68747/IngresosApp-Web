@@ -1,0 +1,521 @@
+/* ==========================================================
+   IngresosApp
+   Paleta compartida con lucassantoro.com.ar; tipografía y
+   composición propias (cartelería vial / guardia de acceso).
+   ========================================================== */
+:root {
+  --night: #0b1220;
+  --night-2: #101c33;
+  --blue: #1d3e7b;
+  --blue-dark: #163161;
+  --signal: #6f9ae0;      /* celeste: acentos sobre fondo oscuro y foco */
+  --mist: #eef1f5;
+  --paper: #ffffff;
+  --ink: #1c222c;
+  --ink-soft: #4b5563;
+  --line: #d6dce5;
+  --display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --body: 'Open Sans', system-ui, sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: var(--blue); text-underline-offset: 3px; }
+a:hover { color: var(--blue-dark); }
+
+a:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  padding: 1px 6px;
+  background: var(--mist);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.wrap {
+  width: min(100% - 40px, 1120px);
+  margin-inline: auto;
+}
+
+.section-heading {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+  color: var(--night);
+}
+
+/* ==========================================================
+   Banner: la app de fondo, velada en azul noche
+   ========================================================== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(560px, 82vh, 720px);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: var(--night);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  perspective: 1600px;
+}
+
+.hero-bg img {
+  position: absolute;
+  top: 52%;
+  right: -10%;
+  width: min(68vw, 1000px);
+  height: auto;
+  border-radius: 10px;
+  transform: translateY(-50%) rotateY(-16deg) rotateX(5deg) rotateZ(-2deg);
+  transform-origin: right center;
+  filter: blur(2.5px) saturate(0.55);
+  opacity: 0.95;
+  transition: filter 0.6s ease, transform 0.8s ease;
+}
+
+/* Velo: azul noche sólido detrás del texto, que se abre hacia la captura */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg,
+      var(--night) 0%,
+      rgba(11, 18, 32, 0.96) 34%,
+      rgba(16, 28, 51, 0.78) 52%,
+      rgba(29, 62, 123, 0.5) 78%,
+      rgba(29, 62, 123, 0.38) 100%),
+    linear-gradient(0deg, rgba(11, 18, 32, 0.7) 0%, rgba(11, 18, 32, 0) 35%);
+  transition: opacity 0.6s ease;
+}
+
+/* Al pasar el mouse, la captura se enfoca: la app "aparece" detrás del texto */
+@media (hover: hover) {
+  .hero:hover .hero-bg img {
+    filter: blur(0) saturate(0.85);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hero:hover .hero-bg img {
+    transform: translateY(-50%) rotateY(-11deg) rotateX(3deg) rotateZ(-1.5deg);
+  }
+}
+
+.hero-inner {
+  width: min(100% - 40px, 1120px);
+  margin-inline: auto;
+  padding: 72px 0 80px;
+}
+
+.hero-inner > * { max-width: 540px; }
+
+/* Patente Mercosur con la versión */
+.plate {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 132px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid #11151c;
+  border-radius: 6px;
+  color: #11151c;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.plate-band {
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  padding: 4px 0 3px;
+}
+
+.plate-text {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  padding: 2px 0 1px;
+}
+
+.hero h1 {
+  margin-top: 22px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.6rem, 2.2rem + 6vw, 6.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+}
+
+.hero-lead {
+  margin-top: 20px;
+  font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.18rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* Botones de descarga */
+.btn {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 56px;
+  padding: 10px 22px;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn small {
+  font-family: var(--body);
+  font-size: 0.74rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  opacity: 0.78;
+}
+
+.btn--primary {
+  color: var(--night);
+  background: #fff;
+}
+
+.btn--primary:hover {
+  color: var(--night);
+  background: #dfe8f6;
+}
+
+.btn--ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn--ghost:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero a:focus-visible { outline-color: #fff; }
+
+/* Banda de barrera: la única franja decorativa del sitio */
+.barrier {
+  height: 10px;
+  background: repeating-linear-gradient(-45deg,
+    var(--blue) 0 22px,
+    #fff 22px 44px);
+}
+
+/* ==========================================================
+   Un día en la guardia
+   ========================================================== */
+.day {
+  padding: 88px 0 96px;
+}
+
+.day .section-heading {
+  margin-bottom: 56px;
+}
+
+.moment {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.moment + .moment {
+  margin-top: 64px;
+}
+
+@media (min-width: 860px) {
+  .moment {
+    grid-template-columns: 7fr 5fr;
+    gap: 56px;
+  }
+
+  .moment--flip {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .moment--flip .shot { order: 2; }
+}
+
+.shot {
+  background: var(--mist);
+  border-radius: 10px;
+  padding: clamp(16px, 3vw, 36px);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px -14px rgba(11, 18, 32, 0.45);
+}
+
+.shot--paper img {
+  max-width: 440px;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+}
+
+.moment-text h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 1.35rem + 0.9vw, 2rem);
+  line-height: 1.1;
+  color: var(--blue);
+}
+
+.moment-text p {
+  margin-top: 12px;
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================
+   Descarga
+   ========================================================== */
+.download {
+  padding: 80px 0;
+  background: var(--mist);
+  border-top: 1px solid var(--line);
+}
+
+.download-grid {
+  display: grid;
+  gap: 36px;
+}
+
+@media (min-width: 860px) {
+  .download-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+  }
+}
+
+.download-grid > div > p {
+  margin-top: 16px;
+  max-width: 44ch;
+  color: var(--ink-soft);
+}
+
+.download .more-link {
+  font-weight: 600;
+}
+
+.specs {
+  display: grid;
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.specs > div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 18px 22px;
+}
+
+.specs > div + div {
+  border-top: 1px solid var(--line);
+}
+
+.specs dt {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--night);
+  line-height: 1.4;
+}
+
+.specs dd {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   Sobre el proyecto
+   ========================================================== */
+.about {
+  padding: 80px 0 88px;
+}
+
+.about-grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 860px) {
+  .about-grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+  }
+}
+
+.about-text p {
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+.about-text p + p { margin-top: 14px; }
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+.site-footer {
+  background: var(--night);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 40px 0;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+
+.footer-brand {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.social {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.social a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.social a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.social a:focus-visible { outline-color: #fff; }
+
+.social svg {
+  width: 24px;
+  height: 24px;
+}
+
+.copyright {
+  font-size: 0.85rem;
+}
+
+/* ==========================================================
+   Pantallas chicas
+   ========================================================== */
+@media (max-width: 760px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-bg img {
+    top: auto;
+    bottom: -6%;
+    right: -38%;
+    width: 125%;
+    transform: rotateY(-14deg) rotateX(4deg) rotateZ(-3deg);
+    opacity: 0.85;
+    filter: blur(1.2px) saturate(0.7);
+  }
+
+  .hero::before {
+    background: linear-gradient(180deg,
+      var(--night) 0%,
+      rgba(11, 18, 32, 0.95) 58%,
+      rgba(16, 28, 51, 0.7) 80%,
+      rgba(29, 62, 123, 0.45) 100%);
+  }
+
+  .hero-inner { padding: 56px 0 200px; }
+
+  .btn { width: 100%; }
+
+  .day { padding: 64px 0 72px; }
+  .day .section-heading { margin-bottom: 36px; }
+  .moment + .moment { margin-top: 48px; }
+
+  .specs > div { grid-template-columns: 1fr; gap: 4px; }
+
+  .footer-inner { justify-content: center; text-align: center; flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IngresosApp · Registro de ingresos para la guardia</title>
+  <meta name="description" content="IngresosApp: aplicación de escritorio gratuita para registrar los ingresos a barrios cerrados, parques industriales y otros predios privados. Descarga para Windows y Linux." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="img/favicon.ico" />
+
+  <link rel="preload" as="image" type="image/webp" href="img/banner-app.webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+
+<body>
+
+  <!-- Banner -->
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="img/banner-app.webp" alt="" width="1220" height="832" fetchpriority="high" />
+    </div>
+
+    <div class="hero-inner">
+      <p class="plate" aria-label="Versión 1.0">
+        <span class="plate-band">IngresosApp</span>
+        <span class="plate-text">V 1.0</span>
+      </p>
+
+      <h1>IngresosApp</h1>
+      <p class="hero-lead">El registro de ingresos para la guardia de barrios cerrados, parques industriales y otros predios privados. Cada vehículo se carga en segundos y al final del día todo queda en un PDF.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp.exe">
+          Descargar para Windows
+          <small>IngresosApp.exe, 12,6 MB</small>
+        </a>
+        <a class="btn btn--ghost" href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp">
+          Descargar para Linux
+          <small>IngresosApp, 13,9 MB</small>
+        </a>
+      </div>
+      <p class="hero-note">Gratuita y sin instalación: se descarga y se abre.</p>
+    </div>
+  </header>
+
+  <div class="barrier" aria-hidden="true"></div>
+
+  <main>
+
+    <!-- Un día en la guardia -->
+    <section class="day" aria-labelledby="day-title">
+      <div class="wrap">
+        <h2 id="day-title" class="section-heading">Un día en la guardia</h2>
+
+        <article class="moment">
+          <figure class="shot">
+            <img src="img/captura-carga.webp" width="610" height="416" loading="lazy" decoding="async"
+                 alt="Formulario de IngresosApp con dominio, empresa, particular y destino completos, y el ingreso agregado a la lista" />
+          </figure>
+          <div class="moment-text">
+            <h3>Cuando llega un vehículo</h3>
+            <p>Se cargan el dominio, la empresa, la persona y el destino. La fecha y la hora se registran solas al guardar, así que no hay que mirar el reloj ni escribirlas a mano.</p>
+          </div>
+        </article>
+
+        <article class="moment moment--flip">
+          <figure class="shot">
+            <img src="img/captura-lista.webp" width="610" height="416" loading="lazy" decoding="async"
+                 alt="Lista de ingresos en IngresosApp con cinco registros ordenados por fecha y hora" />
+          </figure>
+          <div class="moment-text">
+            <h3>Durante el turno</h3>
+            <p>Todos los ingresos quedan en una lista ordenada. Si un dato se cargó mal, se selecciona el registro y se modifica o se elimina, sin tachones en el cuaderno.</p>
+          </div>
+        </article>
+
+        <article class="moment">
+          <figure class="shot shot--paper">
+            <img src="img/captura-pdf.webp" width="740" height="595" loading="lazy" decoding="async"
+                 alt="Reporte en PDF generado por IngresosApp con la tabla de ingresos del día" />
+          </figure>
+          <div class="moment-text">
+            <h3>Al cerrar el día</h3>
+            <p>Un clic en «Exportar a PDF» genera el reporte con todos los ingresos, listo para imprimir, enviar o archivar como respaldo.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Descarga -->
+    <section class="download" aria-labelledby="download-title">
+      <div class="wrap download-grid">
+        <div>
+          <h2 id="download-title" class="section-heading">Versión 1.0</h2>
+          <p>Publicada en enero de 2024. Incluye la carga, modificación y eliminación de ingresos, la lista con fecha y hora automáticas y la exportación a PDF.</p>
+          <p class="more-link"><a href="https://github.com/Lucas68747/IngresosApp/releases" target="_blank" rel="noopener">Ver todas las versiones en GitHub</a></p>
+        </div>
+
+        <dl class="specs">
+          <div>
+            <dt>Windows</dt>
+            <dd><code>IngresosApp.exe</code>, 12,6 MB. Como no está firmado digitalmente, Windows puede mostrar un aviso de SmartScreen la primera vez.</dd>
+          </div>
+          <div>
+            <dt>Linux</dt>
+            <dd><code>IngresosApp</code>, 13,9 MB. Antes de abrirlo hay que darle permiso de ejecución: <code>chmod +x IngresosApp</code>.</dd>
+          </div>
+          <div>
+            <dt>Datos</dt>
+            <dd>Se guardan en una base de datos local en el equipo. No necesita internet ni cuentas.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Sobre el proyecto -->
+    <section class="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <h2 id="about-title" class="section-heading">Sobre el proyecto</h2>
+        <div class="about-text">
+          <p>IngresosApp es un proyecto personal de <a href="https://www.lucassantoro.com.ar/" target="_blank" rel="noopener">Lucas Emanuel Santoro</a>, desarrollado en Python con Tkinter, SQLite y FPDF. El <a href="https://github.com/Lucas68747/IngresosApp" target="_blank" rel="noopener">código de la aplicación</a> es abierto.</p>
+          <p>La primera versión de este sitio funcionó en AWS, con EC2, Nginx y Gunicorn, como práctica de infraestructura cloud. Hoy es un sitio estático publicado con GitHub Pages; su <a href="https://github.com/Lucas68747/IngresosApp-Web" target="_blank" rel="noopener">código</a> también está en GitHub.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand">IngresosApp</p>
+      <ul class="social">
+        <li>
+          <a href="https://github.com/Lucas68747" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/lucassantoro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:lucassantoroemanuel@gmail.com" aria-label="Correo electrónico">
+            <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; 2027 Lucas Emanuel Santoro</p>
+    </div>
+  </footer>
+
+</body>
+</html>
