@@ -41,7 +41,7 @@ python -m http.server 8000
 
 ### v1 · Despliegue en AWS (2025)
 
-La primera versión del sitio la construí para **practicar infraestructura cloud en un proyecto real**, mientras estudiaba para la certificación **AWS Certified Cloud Practitioner**. En lugar de usar un hosting estático, monté y administré el servidor de punta a punta:
+La primera versión del sitio la construí para **practicar infraestructura cloud en un proyecto real**. En lugar de usar un hosting estático, monté y administré el servidor de punta a punta:
 
 - **Aplicación:** Python con **Flask**, plantillas Jinja y Bootstrap.
 - **Cómputo:** instancia **Amazon EC2** con Linux.
@@ -61,7 +61,6 @@ En la migración también aproveché para:
 - Reemplazar Flask, Jinja y Bootstrap por una única página HTML con CSS propio.
 - Sacar el carrusel de fotos de stock (unos 18 MB de imágenes) y usar capturas reales de la app.
 - Cambiar el botón "Descargar", que llevaba al repositorio, por **descargas directas** para Windows y Linux.
-- Corregir textos (la app está disponible para Windows y Linux, no para "cualquier sistema operativo").
 - Mejorar la accesibilidad: textos alternativos descriptivos, foco visible y contraste.
 - Dar de baja los recursos de AWS asociados.
 
