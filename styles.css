@@ -314,23 +314,40 @@ code {
   padding: clamp(16px, 3vw, 36px);
 }
 
-/* Marco de cada captura: al pasar el mouse se amplía donde apunta el puntero */
+/* Marco de cada captura: al pasar el mouse, la captura entera se agranda
+   por encima de la página para verla mejor */
+.shot {
+  position: relative;
+}
+
 .zoom {
-  overflow: hidden;
+  position: relative;
   border-radius: 6px;
+  overflow: hidden;
   box-shadow: 0 14px 30px -14px rgba(11, 18, 32, 0.45);
+  transform-origin: left center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moment--flip .zoom {
+  transform-origin: right center;
 }
 
 .zoom img {
   width: 100%;
   height: auto;
-  transform-origin: var(--x, 50%) var(--y, 50%);
-  transition: transform 0.25s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .zoom { cursor: zoom-in; }
-  .zoom:hover img { transform: scale(2.2); }
+@media (hover: hover) and (pointer: fine) and (min-width: 860px) {
+  .shot:hover { z-index: 5; }
+
+  .zoom:hover {
+    transform: scale(1.45);
+    box-shadow: 0 30px 60px -20px rgba(11, 18, 32, 0.55);
+  }
+
+  .shot--dialog .zoom,
+  .shot--dialog .zoom:hover { transform-origin: center; }
 }
 
 .shot--paper .zoom,

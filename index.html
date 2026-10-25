@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
 
@@ -258,16 +258,6 @@
     </div>
   </footer>
 
-  <script>
-    // Zoom de las capturas: al pasar el mouse, se amplía la zona donde está el puntero.
-    document.querySelectorAll(".zoom").forEach((marco) => {
-      marco.addEventListener("mousemove", (e) => {
-        const r = marco.getBoundingClientRect();
-        marco.style.setProperty("--x", ((e.clientX - r.left) / r.width) * 100 + "%");
-        marco.style.setProperty("--y", ((e.clientY - r.top) / r.height) * 100 + "%");
-      });
-    });
-  </script>
 
 </body>
 </html>
