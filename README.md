@@ -1,8 +1,8 @@
 # IngresosApp Web
 
-Sitio web de **[IngresosApp](https://github.com/Lucas68747/IngresosApp)**, una aplicación de escritorio desarrollada en Python para registrar los ingresos a predios privados (barrios cerrados, parques industriales, etc.).
+Sitio web de **[IngresosApp](https://github.com/Lucas68747/IngresosApp)**, una aplicación de escritorio desarrollada en Python para registrar los ingresos y salidas en predios privados (barrios cerrados, parques industriales, etc.).
 
-El sitio presenta la aplicación, muestra cómo funciona y ofrece la descarga directa de la última versión para Windows y Linux.
+El sitio presenta la aplicación, muestra cómo funciona y ofrece la descarga directa de todas las versiones para Windows y Linux.
 
 🌐 **[www.ingresosapp.com.ar](https://www.ingresosapp.com.ar/)**
 
@@ -15,7 +15,8 @@ El sitio presenta la aplicación, muestra cómo funciona y ofrece la descarga di
 | **Frontend** | HTML5 y CSS3, sin frameworks ni JavaScript (tipografías Barlow Condensed y Open Sans) |
 | **Hosting** | GitHub Pages |
 | **Dominio** | `ingresosapp.com.ar`, registrado en NIC Argentina |
-| **Descargas** | Servidas desde los [Releases de IngresosApp](https://github.com/Lucas68747/IngresosApp/releases) |
+| **DNS** | Cloudflare (solo DNS, sin proxy) |
+| **Descargas** | Servidas desde los [Releases de IngresosApp](https://github.com/Lucas68747/IngresosApp/releases); los botones principales apuntan siempre a la última versión |
 
 ### Estructura
 
@@ -23,7 +24,7 @@ El sitio presenta la aplicación, muestra cómo funciona y ofrece la descarga di
 ├── index.html      # Página única
 ├── styles.css      # Estilos (paleta compartida con lucassantoro.com.ar)
 ├── CNAME           # Dominio personalizado para GitHub Pages
-└── img/            # Capturas reales de la app y favicon
+└── img/            # Capturas reales de la app, ícono e imagen para redes
 ```
 
 ### Verlo en local
@@ -63,6 +64,14 @@ En la migración también aproveché para:
 - Cambiar el botón "Descargar", que llevaba al repositorio, por **descargas directas** para Windows y Linux.
 - Mejorar la accesibilidad: textos alternativos descriptivos, foco visible y contraste.
 - Dar de baja los recursos de AWS asociados.
+
+### Actualización para IngresosApp 2.0 (octubre 2026)
+
+- Capturas nuevas de la versión 2.0 y un recorrido por un día en la guardia: llegada, turno, correcciones y cierre.
+- Sección «Qué más trae» con las funciones nuevas (agenda, copias de seguridad, búsqueda, recorrido).
+- Tabla con **todas las versiones** y sus descargas para Windows y Linux.
+- Ícono nuevo de la app como favicon, e imagen y metadatos para cuando se comparte el enlace.
+- DNS movido de Route 53 a Cloudflare.
 
 El código de la versión en AWS sigue disponible en la etiqueta [`aws-flask`](https://github.com/Lucas68747/IngresosApp-Web/tree/aws-flask):
 

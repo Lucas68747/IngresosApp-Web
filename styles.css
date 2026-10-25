@@ -133,6 +133,17 @@ code {
   }
 }
 
+/* Leyenda sobre la captura del banner */
+.hero-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
 .hero-inner {
   width: min(100% - 40px, 1120px);
   margin-inline: auto;
@@ -311,7 +322,12 @@ code {
 }
 
 .shot--paper img {
-  max-width: 440px;
+  margin-inline: auto;
+  border: 1px solid var(--line);
+}
+
+.shot--dialog img {
+  max-width: 520px;
   margin-inline: auto;
   border: 1px solid var(--line);
 }
@@ -331,7 +347,50 @@ code {
 }
 
 /* ==========================================================
-   Descarga
+   Qué más trae
+   ========================================================== */
+.extras {
+  padding: 0 0 88px;
+}
+
+.extras .section-heading {
+  margin-bottom: 36px;
+}
+
+.extras-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+@media (min-width: 900px) {
+  .extras-list { grid-template-columns: repeat(3, 1fr); }
+  gap: 0;
+  border-top: 3px solid var(--night);
+}
+
+.extras-list li {
+  padding: 22px 28px 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.extras-list h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: var(--blue);
+}
+
+.extras-list p {
+  margin-top: 6px;
+  max-width: 40ch;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================
+   Descargas
    ========================================================== */
 .download {
   padding: 80px 0;
@@ -358,7 +417,100 @@ code {
 }
 
 .download .more-link {
+  margin-top: 16px;
   font-weight: 600;
+}
+
+.specs strong { color: var(--ink); font-weight: 600; }
+
+/* Tabla de versiones */
+.versions {
+  margin-top: 56px;
+}
+
+.versions-title {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--night);
+  margin-bottom: 14px;
+}
+
+.versions table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.95rem;
+}
+
+.versions thead th {
+  text-align: left;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--night);
+  padding: 10px 18px;
+}
+
+.versions td,
+.versions tbody th {
+  padding: 16px 18px;
+  vertical-align: top;
+  text-align: left;
+  color: var(--ink-soft);
+}
+
+.versions tbody tr + tr > * {
+  border-top: 1px solid var(--line);
+}
+
+.versions tbody th {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--night);
+  white-space: nowrap;
+}
+
+.versions td[data-label="Fecha"] { white-space: nowrap; }
+
+.tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  vertical-align: 3px;
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--blue);
+  border-radius: 4px;
+}
+
+.dl-links {
+  white-space: nowrap;
+}
+
+.dl-links a {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 0 6px 6px 0;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--blue);
+  border-radius: 5px;
+}
+
+.dl-links a:hover {
+  color: #fff;
+  background: var(--blue);
 }
 
 .specs {
@@ -510,6 +662,21 @@ code {
   .moment + .moment { margin-top: 48px; }
 
   .specs > div { grid-template-columns: 1fr; gap: 4px; }
+
+  .extras { padding-bottom: 64px; }
+  .extras-list li { padding-right: 0; }
+
+  .hero-caption { right: 16px; bottom: 10px; }
+
+  /* La tabla de versiones pasa a tarjetas */
+  .versions table, .versions tbody, .versions tr, .versions td, .versions tbody th { display: block; }
+  .versions thead { display: none; }
+  .versions tbody th { padding-bottom: 4px; }
+  .versions td { padding-top: 4px; padding-bottom: 4px; }
+  .versions td:last-child { padding-bottom: 16px; }
+  .versions tbody tr + tr > * { border-top: 0; }
+  .versions tbody tr + tr { border-top: 1px solid var(--line); }
+  .versions td[data-label="Fecha"]::before { content: "Publicada el "; }
 
   .footer-inner { justify-content: center; text-align: center; flex-direction: column; }
 }

@@ -4,17 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>IngresosApp · Registro de ingresos para la guardia</title>
-  <meta name="description" content="IngresosApp: aplicación de escritorio gratuita para registrar los ingresos a barrios cerrados, parques industriales y otros predios privados. Descarga para Windows y Linux." />
+  <meta name="description" content="IngresosApp: aplicación de escritorio gratuita y de código abierto para registrar ingresos y salidas en barrios cerrados, parques industriales y otros predios privados. Descarga para Windows y Linux." />
   <meta name="theme-color" content="#0b1220" />
-  <link rel="icon" href="img/favicon.ico" />
+  <link rel="canonical" href="https://www.ingresosapp.com.ar/" />
+  <link rel="icon" href="img/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="img/icono-32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/icono-180.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:title" content="IngresosApp · Registro de ingresos para la guardia" />
+  <meta property="og:description" content="Ingresos y salidas, guardia de turno, agenda y reportes en PDF. Gratuita, para Windows y Linux." />
+  <meta property="og:url" content="https://www.ingresosapp.com.ar/" />
+  <meta property="og:image" content="https://www.ingresosapp.com.ar/img/og-imagen.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preload" as="image" type="image/webp" href="img/banner-app.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
-
 <body>
 
   <!-- Banner -->
@@ -22,27 +34,28 @@
     <div class="hero-bg" aria-hidden="true">
       <img src="img/banner-app.webp" alt="" width="1220" height="832" fetchpriority="high" />
     </div>
+    <p class="hero-caption">Imagen ilustrativa · v1.0</p>
 
     <div class="hero-inner">
-      <p class="plate" aria-label="Versión 1.0">
+      <p class="plate" aria-label="Versión 2.0">
         <span class="plate-band">IngresosApp</span>
-        <span class="plate-text">V 1.0</span>
+        <span class="plate-text">V 2.0</span>
       </p>
 
       <h1>IngresosApp</h1>
-      <p class="hero-lead">El registro de ingresos para la guardia de barrios cerrados, parques industriales y otros predios privados. Cada vehículo se carga en segundos y al final del día todo queda en un PDF.</p>
+      <p class="hero-lead">El registro de ingresos y salidas para la guardia de barrios cerrados, parques industriales y otros predios privados. Cada ingreso se carga en segundos, nada se borra y al final del día todo queda en un PDF.</p>
 
       <div class="hero-actions">
-        <a class="btn btn--primary" href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp.exe">
+        <a class="btn btn--primary" href="https://github.com/Lucas68747/IngresosApp/releases/latest/download/IngresosApp.exe">
           Descargar para Windows
-          <small>IngresosApp.exe, 12,6 MB</small>
+          <small>IngresosApp.exe · versión 2.0.0</small>
         </a>
-        <a class="btn btn--ghost" href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp">
+        <a class="btn btn--ghost" href="https://github.com/Lucas68747/IngresosApp/releases/latest/download/IngresosApp">
           Descargar para Linux
-          <small>IngresosApp, 13,9 MB</small>
+          <small>IngresosApp · versión 2.0.0</small>
         </a>
       </div>
-      <p class="hero-note">Gratuita y sin instalación: se descarga y se abre.</p>
+      <p class="hero-note">Gratuita, de código abierto y sin instalación: se descarga y se abre.</p>
     </div>
   </header>
 
@@ -57,62 +70,146 @@
 
         <article class="moment">
           <figure class="shot">
-            <img src="img/captura-carga.webp" width="610" height="416" loading="lazy" decoding="async"
-                 alt="Formulario de IngresosApp con dominio, empresa, particular y destino completos, y el ingreso agregado a la lista" />
+            <img src="img/captura-llegada.webp" width="1220" height="788" loading="lazy" decoding="async"
+                 alt="Ventana de IngresosApp con un ingreso en carga: dominio, motivo, persona y destino, y debajo la ficha del lote con los teléfonos de la familia" />
           </figure>
           <div class="moment-text">
-            <h3>Cuando llega un vehículo</h3>
-            <p>Se cargan el dominio, la empresa, la persona y el destino. La fecha y la hora se registran solas al guardar, así que no hay que mirar el reloj ni escribirlas a mano.</p>
+            <h3>Cuando llega alguien</h3>
+            <p>Se cargan el dominio, quién es y a dónde va, en vehículo o a pie. Al escribir el destino aparece la ficha de la agenda con el teléfono para avisar, y se puede anotar quién autorizó el ingreso. La fecha, la hora y la guardia de turno se registran solas.</p>
           </div>
         </article>
 
         <article class="moment moment--flip">
           <figure class="shot">
-            <img src="img/captura-lista.webp" width="610" height="416" loading="lazy" decoding="async"
-                 alt="Lista de ingresos en IngresosApp con cinco registros ordenados por fecha y hora" />
+            <img src="img/captura-turno.webp" width="1220" height="788" loading="lazy" decoding="async"
+                 alt="Registro del día en IngresosApp con siete ingresos, sus horarios de salida, la guardia de cada uno y un registro anulado tachado" />
           </figure>
           <div class="moment-text">
             <h3>Durante el turno</h3>
-            <p>Todos los ingresos quedan en una lista ordenada. Si un dato se cargó mal, se selecciona el registro y se modifica o se elimina, sin tachones en el cuaderno.</p>
+            <p>«Adentro ahora» muestra quiénes entraron y todavía no salieron, y hace cuánto. Cuando alguien se va, la salida se registra con un clic. Al cambiar de turno, la nueva guardia pone su nombre y cada movimiento queda firmado.</p>
           </div>
         </article>
 
         <article class="moment">
+          <figure class="shot shot--dialog">
+            <img src="img/captura-historial.webp" width="642" height="414" loading="lazy" decoding="async"
+                 alt="Historial de un registro en IngresosApp: el ingreso y una corrección del nombre, con fecha, hora y guardia" />
+          </figure>
+          <div class="moment-text">
+            <h3>Si algo se cargó mal</h3>
+            <p>Nada se borra. Un error se corrige o se anula con un motivo, y cada registro guarda su historial: qué cambió, cuándo y quién lo hizo. Los anulados siguen a la vista, tachados.</p>
+          </div>
+        </article>
+
+        <article class="moment moment--flip">
           <figure class="shot shot--paper">
-            <img src="img/captura-pdf.webp" width="740" height="595" loading="lazy" decoding="async"
-                 alt="Reporte en PDF generado por IngresosApp con la tabla de ingresos del día" />
+            <img src="img/captura-pdf.webp" width="1100" height="521" loading="lazy" decoding="async"
+                 alt="Reporte en PDF de IngresosApp con la tabla de ingresos y salidas del día y el lugar para la firma del encargado" />
           </figure>
           <div class="moment-text">
             <h3>Al cerrar el día</h3>
-            <p>Un clic en «Exportar a PDF» genera el reporte con todos los ingresos, listo para imprimir, enviar o archivar como respaldo.</p>
+            <p>Un clic genera el reporte en PDF del día o de un período, con lugar para la firma del encargado. Si está configurado, se envía por correo desde la misma app.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Descarga -->
-    <section class="download" aria-labelledby="download-title">
-      <div class="wrap download-grid">
-        <div>
-          <h2 id="download-title" class="section-heading">Versión 1.0</h2>
-          <p>Publicada en enero de 2024. Incluye la carga, modificación y eliminación de ingresos, la lista con fecha y hora automáticas y la exportación a PDF.</p>
-          <p class="more-link"><a href="https://github.com/Lucas68747/IngresosApp/releases" target="_blank" rel="noopener">Ver todas las versiones en GitHub</a></p>
+    <!-- Qué más trae -->
+    <section class="extras" aria-labelledby="extras-title">
+      <div class="wrap">
+        <h2 id="extras-title" class="section-heading">Qué más trae</h2>
+        <ul class="extras-list">
+          <li>
+            <h3>Agenda de la guardia</h3>
+            <p>Lotes, casas, empresas o sectores con sus teléfonos y notas. Se edita y se borra cuando hace falta, y nunca sale en los reportes.</p>
+          </li>
+          <li>
+            <h3>Copia de seguridad diaria</h3>
+            <p>Todos los días se guarda una copia de la base. Se conservan las últimas 30.</p>
+          </li>
+          <li>
+            <h3>Búsqueda</h3>
+            <p>Por dominio, empresa, persona, destino o fecha. Lo que ya se cargó se autocompleta.</p>
+          </li>
+          <li>
+            <h3>Se adapta al lugar</h3>
+            <p>Barrio cerrado, parque industrial, empresa u otro: cambian los ejemplos y las ayudas, no la forma de trabajar.</p>
+          </li>
+          <li>
+            <h3>Recorrido de la primera vez</h3>
+            <p>La app explica cada parte de la ventana al abrirla. Se puede repetir con F1.</p>
+          </li>
+          <li>
+            <h3>Sin internet ni cuentas</h3>
+            <p>Los datos quedan solo en el equipo de la garita. Internet hace falta únicamente para enviar reportes por correo.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Descargas -->
+    <section class="download" id="descargas" aria-labelledby="download-title">
+      <div class="wrap">
+        <div class="download-grid">
+          <div>
+            <h2 id="download-title" class="section-heading">Descargas</h2>
+            <p>La versión 2.0.0 es la recomendada. Si se usaba la 1.0, sus datos se importan solos la primera vez y el archivo original no se modifica.</p>
+          </div>
+
+          <dl class="specs">
+            <div>
+              <dt>Windows</dt>
+              <dd><code>IngresosApp.exe</code>. Como todavía no está firmado digitalmente, Windows puede mostrar un aviso de SmartScreen la primera vez: tocá <strong>Más información</strong> y después <strong>Ejecutar de todas formas</strong>.</dd>
+            </div>
+            <div>
+              <dt>Linux</dt>
+              <dd><code>IngresosApp</code>. Antes de abrirlo hay que darle permiso de ejecución: <code>chmod +x IngresosApp</code>.</dd>
+            </div>
+            <div>
+              <dt>Datos</dt>
+              <dd>Se guardan en <code>Documentos\IngresosApp</code>, junto con las copias de seguridad y los reportes.</dd>
+            </div>
+            <div>
+              <dt>Verificar</dt>
+              <dd>Cada versión publica las huellas SHA-256 de sus archivos y una constancia de que se compiló en GitHub a partir del código abierto.</dd>
+            </div>
+          </dl>
         </div>
 
-        <dl class="specs">
-          <div>
-            <dt>Windows</dt>
-            <dd><code>IngresosApp.exe</code>, 12,6 MB. Como no está firmado digitalmente, Windows puede mostrar un aviso de SmartScreen la primera vez.</dd>
-          </div>
-          <div>
-            <dt>Linux</dt>
-            <dd><code>IngresosApp</code>, 13,9 MB. Antes de abrirlo hay que darle permiso de ejecución: <code>chmod +x IngresosApp</code>.</dd>
-          </div>
-          <div>
-            <dt>Datos</dt>
-            <dd>Se guardan en una base de datos local en el equipo. No necesita internet ni cuentas.</dd>
-          </div>
-        </dl>
+        <div class="versions">
+          <h3 class="versions-title">Todas las versiones</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Versión</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Novedades</th>
+                <th scope="col">Descargar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">2.0.0 <span class="tag">Actual</span></th>
+                <td data-label="Fecha">25/10/2026</td>
+                <td data-label="Novedades">Salidas y «Adentro ahora», guardia de turno, agenda, historial y anulación con motivo, búsqueda, copias de seguridad, reportes por período y envío por correo. <a href="https://github.com/Lucas68747/IngresosApp/releases/tag/v2.0.0" target="_blank" rel="noopener">Notas completas</a></td>
+                <td data-label="Descargar" class="dl-links">
+                  <a href="https://github.com/Lucas68747/IngresosApp/releases/download/v2.0.0/IngresosApp.exe">Windows</a>
+                  <a href="https://github.com/Lucas68747/IngresosApp/releases/download/v2.0.0/IngresosApp">Linux</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1.0</th>
+                <td data-label="Fecha">22/01/2024</td>
+                <td data-label="Novedades">Primera versión: carga, modificación y eliminación de ingresos, fecha y hora automáticas y exportación a PDF.</td>
+                <td data-label="Descargar" class="dl-links">
+                  <a href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp.exe">Windows</a>
+                  <a href="https://github.com/Lucas68747/IngresosApp/releases/download/v1.0/IngresosApp">Linux</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="more-link"><a href="https://github.com/Lucas68747/IngresosApp/releases" target="_blank" rel="noopener">Ver las versiones en GitHub</a></p>
+        </div>
       </div>
     </section>
 
@@ -121,8 +218,8 @@
       <div class="wrap about-grid">
         <h2 id="about-title" class="section-heading">Sobre el proyecto</h2>
         <div class="about-text">
-          <p>IngresosApp es un proyecto personal de <a href="https://www.lucassantoro.com.ar/" target="_blank" rel="noopener">Lucas Emanuel Santoro</a>, desarrollado en Python con Tkinter, SQLite y FPDF. El <a href="https://github.com/Lucas68747/IngresosApp" target="_blank" rel="noopener">código de la aplicación</a> es abierto.</p>
-          <p>La primera versión de este sitio funcionó en AWS, con EC2, Nginx y Gunicorn, como práctica de infraestructura cloud. Hoy es un sitio estático publicado con GitHub Pages; su <a href="https://github.com/Lucas68747/IngresosApp-Web" target="_blank" rel="noopener">código</a> también está en GitHub.</p>
+          <p>IngresosApp nació en la garita de un parque industrial, donde los ingresos se anotaban a mano en planillas fotocopiadas. Hoy está pensada para cualquier lugar que necesite registrar quién entra y quién sale, con guardias rotativas las 24 horas.</p>
+          <p>Es un proyecto personal de <a href="https://www.lucassantoro.com.ar/" target="_blank" rel="noopener">Lucas Emanuel Santoro</a>, desarrollado en Python con Tkinter, SQLite y fpdf2. El <a href="https://github.com/Lucas68747/IngresosApp" target="_blank" rel="noopener">código de la aplicación</a> es abierto, con licencia MIT.</p>
         </div>
       </div>
     </section>
