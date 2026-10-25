@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
 
@@ -37,9 +37,9 @@
     <p class="hero-caption">Imagen ilustrativa · v1.0</p>
 
     <div class="hero-inner">
-      <p class="plate" aria-label="Versión 2.0">
+      <p class="plate" aria-label="Versión 2.0.0">
         <span class="plate-band">IngresosApp</span>
-        <span class="plate-text">V 2.0</span>
+        <span class="plate-text">V 2.0.0</span>
       </p>
 
       <h1>IngresosApp</h1>
@@ -70,8 +70,10 @@
 
         <article class="moment">
           <figure class="shot">
-            <img src="img/captura-llegada.webp" width="1220" height="788" loading="lazy" decoding="async"
+            <div class="zoom">
+              <img src="img/captura-llegada.webp" width="1280" height="827" loading="lazy" decoding="async"
                  alt="Ventana de IngresosApp con un ingreso en carga: dominio, motivo, persona y destino, y debajo la ficha del lote con los teléfonos de la familia" />
+            </div>
           </figure>
           <div class="moment-text">
             <h3>Cuando llega alguien</h3>
@@ -81,8 +83,10 @@
 
         <article class="moment moment--flip">
           <figure class="shot">
-            <img src="img/captura-turno.webp" width="1220" height="788" loading="lazy" decoding="async"
+            <div class="zoom">
+              <img src="img/captura-turno.webp" width="1220" height="788" loading="lazy" decoding="async"
                  alt="Registro del día en IngresosApp con siete ingresos, sus horarios de salida, la guardia de cada uno y un registro anulado tachado" />
+            </div>
           </figure>
           <div class="moment-text">
             <h3>Durante el turno</h3>
@@ -92,8 +96,10 @@
 
         <article class="moment">
           <figure class="shot shot--dialog">
-            <img src="img/captura-historial.webp" width="642" height="414" loading="lazy" decoding="async"
+            <div class="zoom">
+              <img src="img/captura-historial.webp" width="642" height="414" loading="lazy" decoding="async"
                  alt="Historial de un registro en IngresosApp: el ingreso y una corrección del nombre, con fecha, hora y guardia" />
+            </div>
           </figure>
           <div class="moment-text">
             <h3>Si algo se cargó mal</h3>
@@ -103,8 +109,10 @@
 
         <article class="moment moment--flip">
           <figure class="shot shot--paper">
-            <img src="img/captura-pdf.webp" width="1100" height="521" loading="lazy" decoding="async"
+            <div class="zoom">
+              <img src="img/captura-reporte.webp" width="1400" height="991" loading="lazy" decoding="async"
                  alt="Reporte en PDF de IngresosApp con la tabla de ingresos y salidas del día y el lugar para la firma del encargado" />
+            </div>
           </figure>
           <div class="moment-text">
             <h3>Al cerrar el día</h3>
@@ -249,6 +257,17 @@
       <p class="copyright">&copy; 2027 Lucas Emanuel Santoro</p>
     </div>
   </footer>
+
+  <script>
+    // Zoom de las capturas: al pasar el mouse, se amplía la zona donde está el puntero.
+    document.querySelectorAll(".zoom").forEach((marco) => {
+      marco.addEventListener("mousemove", (e) => {
+        const r = marco.getBoundingClientRect();
+        marco.style.setProperty("--x", ((e.clientX - r.left) / r.width) * 100 + "%");
+        marco.style.setProperty("--y", ((e.clientY - r.top) / r.height) * 100 + "%");
+      });
+    });
+  </script>
 
 </body>
 </html>

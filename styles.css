@@ -157,7 +157,7 @@ code {
   display: inline-flex;
   flex-direction: column;
   align-items: stretch;
-  width: 132px;
+  width: 158px;
   overflow: hidden;
   background: #fff;
   border: 2px solid #11151c;
@@ -314,22 +314,33 @@ code {
   padding: clamp(16px, 3vw, 36px);
 }
 
-.shot img {
-  width: 100%;
-  height: auto;
+/* Marco de cada captura: al pasar el mouse se amplía donde apunta el puntero */
+.zoom {
+  overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 14px 30px -14px rgba(11, 18, 32, 0.45);
 }
 
-.shot--paper img {
-  margin-inline: auto;
+.zoom img {
+  width: 100%;
+  height: auto;
+  transform-origin: var(--x, 50%) var(--y, 50%);
+  transition: transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zoom { cursor: zoom-in; }
+  .zoom:hover img { transform: scale(2.2); }
+}
+
+.shot--paper .zoom,
+.shot--dialog .zoom {
   border: 1px solid var(--line);
 }
 
-.shot--dialog img {
+.shot--dialog .zoom {
   max-width: 520px;
   margin-inline: auto;
-  border: 1px solid var(--line);
 }
 
 .moment-text h3 {
