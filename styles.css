@@ -274,6 +274,105 @@ code {
 }
 
 /* ==========================================================
+   Video
+   ========================================================== */
+.video {
+  padding: 88px 0 0;
+}
+
+.video .section-heading {
+  margin-bottom: 32px;
+}
+
+.video-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 860px) {
+  .video-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.video-item figcaption {
+  margin-top: 14px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.video-item figcaption strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--blue);
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--night);
+  box-shadow: 0 30px 50px -30px rgba(11, 18, 32, 0.55);
+}
+
+.video-frame iframe,
+.video-play,
+.video-play img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-play {
+  position: relative;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.video-play img { object-fit: cover; }
+
+/* Botón de play con la forma de la patente: blanco, borde oscuro */
+/* Sobre la captura de la miniatura, sin tapar el título */
+.video-icon {
+  position: absolute;
+  left: 74%;
+  top: 55%;
+  width: 80px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 3px solid #11151c;
+  border-radius: 10px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.video-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--blue);
+}
+
+/* En "Primeros pasos" la captura está a la izquierda */
+.video-play--left .video-icon { left: 26%; }
+
+.video-play:hover .video-icon { background: #dfe8f6; transform: translate(-50%, -50%) scale(1.06); }
+
+.video-play:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: -3px;
+}
+
+/* ==========================================================
    Un día en la guardia
    ========================================================== */
 .day {
@@ -684,6 +783,10 @@ code {
   .hero-inner { padding: 56px 0 200px; }
 
   .btn { width: 100%; }
+
+  .video { padding-top: 64px; }
+  .video-icon { width: 64px; height: 44px; }
+  .video-icon::after { border-width: 11px 0 11px 18px; }
 
   .day { padding: 64px 0 72px; }
   .day .section-heading { margin-bottom: 36px; }

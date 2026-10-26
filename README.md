@@ -12,7 +12,7 @@ El sitio presenta la aplicación, muestra cómo funciona y ofrece la descarga di
 
 | | |
 |---|---|
-| **Frontend** | HTML5 y CSS3, sin frameworks ni JavaScript (tipografías Barlow Condensed y Open Sans) |
+| **Frontend** | HTML5 y CSS3, sin frameworks; JavaScript solo para cargar los videos al reproducirlos (tipografías Barlow Condensed y Open Sans) |
 | **Hosting** | GitHub Pages |
 | **Dominio** | `ingresosapp.com.ar`, registrado en NIC Argentina |
 | **DNS** | Cloudflare (solo DNS, sin proxy) |
