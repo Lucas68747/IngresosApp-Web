@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
@@ -281,7 +281,29 @@
     </div>
   </footer>
 
+  <!-- Captura a pantalla completa (celulares) -->
+  <div class="visor" id="visor" hidden>
+    <button class="visor-cerrar" type="button" aria-label="Cerrar">&times;</button>
+    <img alt="" />
+  </div>
+
   <script>
+    // En celulares, tocar una captura la abre a pantalla completa.
+    const visor = document.getElementById("visor");
+    const pantallaTactil = window.matchMedia("(hover: none), (max-width: 859px)");
+    const cerrarVisor = () => { visor.hidden = true; document.body.style.overflow = ""; };
+    document.querySelectorAll(".zoom img").forEach((img) => {
+      img.addEventListener("click", () => {
+        if (!pantallaTactil.matches) return;
+        visor.querySelector("img").src = img.src;
+        visor.querySelector("img").alt = img.alt;
+        visor.hidden = false;
+        document.body.style.overflow = "hidden";
+      });
+    });
+    visor.addEventListener("click", cerrarVisor);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarVisor(); });
+
     // El video de YouTube se carga recién cuando alguien toca play.
     document.querySelectorAll(".video-frame").forEach((marco) => {
       marco.querySelector(".video-play").addEventListener("click", () => {
